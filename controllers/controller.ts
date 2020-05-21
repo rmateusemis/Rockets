@@ -1,5 +1,4 @@
 // FASE 1
-
 var rocket1 = new Rocket('32WESSDS', 3);
 var rocket2 = new Rocket('LDSFJA32', 6);
 

@@ -3,7 +3,7 @@ class Rocket {
     numThrusters: number;
     // thrusters:Thruster[]=new Array();
 
-    constructor(code:string, numThrusters: number) {
+    constructor(code: string, numThrusters: number) {
         this.code = code;
         this.numThrusters = numThrusters;
     }
@@ -13,3 +13,4 @@ class Rocket {
     }
     */
 }
+
