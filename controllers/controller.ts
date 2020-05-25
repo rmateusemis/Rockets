@@ -1,10 +1,15 @@
-// CONTROLLER
 var rocket1: Rocket;
 var rocket2: Rocket;
 
+let rocket1CurrentPower = 0;
+let rocket2CurrentPower = 0;
+
+let rocket1Exists = false;
+let rocket2Exists = false;
+
 var displayRockets = document.getElementById('displayRockets');
 
-// Create rocket
+// Create rocket ---------------------------------------------
 function createRocket1() {
     rocket1 = new Rocket('32WESSDS', 3);
     let thruster1 = new Thruster(10, 0);
@@ -17,7 +22,7 @@ function createRocket1() {
 
     console.log(rocket1);
 
-    displayRockets.innerHTML +=  rocket1.code + ": " + thruster1.maxPower + ", " + thruster2.maxPower + ", " + thruster2.maxPower + "."  + "</br>";
+    rocket1Exists = true;
 }
 
 function createRocket2() {
@@ -36,58 +41,132 @@ function createRocket2() {
     rocket2.addThruster(thruster5);
     rocket2.addThruster(thruster6);
 
+    console.log(rocket2);
 
-    displayRockets.innerHTML += rocket2.code + ": " + thruster1.maxPower + ", " + thruster2.maxPower + ", " + thruster3.maxPower + ", " + thruster4.maxPower + ", " + thruster5.maxPower + ", " + thruster6.maxPower + ".";
+    rocket2Exists = true;
 }
 
-
-/*
-let rocket1 = new Rocket('32WESSDS', 3);
-let thruster1 = new Thruster(10, 0);
-let thruster2 = new Thruster(30, 0);
-let thruster3 = new Thruster(80, 0);
-
-let rocket1MaxPower = thruster1.maxPower + thruster2.maxPower + thruster3.maxPower;
-
-let rocket1CurrentPower = thruster1.currentPower + thruster2.currentPower + thruster3.currentPower;
-
-rocket1.addThruster(thruster1);
-rocket1.addThruster(thruster2);
-rocket1.addThruster(thruster3);
-
-// accelerateRocket()
-let thruster1Increment = 0;
-let thruster2Increment = 0;
-let thruster3Increment = 0;
-let i = 0;
-
-while (rocket1CurrentPower < rocket1MaxPower) {
-    if (thruster1.currentPower < thruster1.maxPower) {
-        thruster1Increment = 10;
-        thruster1.currentPower += 10;
+// Accelerate Rocket ----------------------------------------
+function accelerateRocket1() {
+    if (rocket1Exists) {
+        if (rocket1.thrusters[0].currentPower < rocket1.thrusters[0].maxPower) {
+            rocket1.thrusters[0].currentPower += 10;
+        }
+        if (rocket1.thrusters[1].currentPower < rocket1.thrusters[1].maxPower) {
+            rocket1.thrusters[1].currentPower += 10;
+        }
+        if (rocket1.thrusters[2].currentPower < rocket1.thrusters[2].maxPower) {
+            rocket1.thrusters[2].currentPower += 10;
+        }
+        rocket1CurrentPower = rocket1.thrusters[0].currentPower + rocket1.thrusters[1].currentPower + rocket1.thrusters[2].currentPower;
+        console.log(rocket1CurrentPower);
     } else {
-        thruster1Increment = 0
+        alert("Primero debes crear el 'Rocket1'");
     }
-    if (thruster2.currentPower < thruster2.maxPower) {
-        thruster2Increment = 10;
-        thruster2.currentPower += 10;
-    } else {
-        thruster2Increment = 0
-    }
-    if (thruster3.currentPower < thruster3.maxPower) {
-        thruster3Increment = 10;
-        thruster3.currentPower += 10;
-    } else {
-        thruster3Increment = 0
-    }
-    i++;
-    rocket1CurrentPower = thruster1.currentPower + thruster2.currentPower + thruster3.currentPower;
-
-    console.log("Increment " + i + "cop: " + thruster1Increment + "+" + thruster2Increment + "+" + thruster3Increment + "=" + rocket1CurrentPower + "potència actual");
 }
-console.log(thruster1.currentPower);
-console.log(thruster2.currentPower);
-console.log(thruster3.currentPower);
 
-console.log(rocket1CurrentPower);
-*/
+function accelerateRocket2() {
+    if (rocket2Exists) {
+        if (rocket2.thrusters[0].currentPower < rocket2.thrusters[0].maxPower) {
+            rocket2.thrusters[0].currentPower += 10;
+        }
+        if (rocket2.thrusters[1].currentPower < rocket2.thrusters[1].maxPower) {
+            rocket2.thrusters[1].currentPower += 10;
+        }
+        if (rocket2.thrusters[2].currentPower < rocket2.thrusters[2].maxPower) {
+            rocket2.thrusters[2].currentPower += 10;
+        }
+        if (rocket2.thrusters[3].currentPower < rocket2.thrusters[3].maxPower) {
+            rocket2.thrusters[3].currentPower += 10;
+        }
+        if (rocket2.thrusters[4].currentPower < rocket2.thrusters[4].maxPower) {
+            rocket2.thrusters[4].currentPower += 10;
+        }
+        if (rocket2.thrusters[5].currentPower < rocket2.thrusters[5].maxPower) {
+            rocket2.thrusters[5].currentPower += 10;
+        }
+        rocket2CurrentPower = rocket2.thrusters[0].currentPower + rocket2.thrusters[1].currentPower + rocket2.thrusters[2].currentPower + rocket2.thrusters[3].currentPower + rocket2.thrusters[4].currentPower + rocket2.thrusters[5].currentPower;
+        console.log(rocket2CurrentPower);
+    } else {
+        alert("Primero debes crear el 'Rocket2'");
+    }
+}
+
+// Break Rocket ----------------------------------------
+function breakRocket1() {
+    if (rocket1Exists) {
+        if (rocket1.thrusters[0].currentPower > 0) {
+            rocket1.thrusters[0].currentPower -= 10;
+        }
+        if (rocket1.thrusters[1].currentPower > 0) {
+            rocket1.thrusters[1].currentPower -= 10;
+        }
+        if (rocket1.thrusters[2].currentPower > 0) {
+            rocket1.thrusters[2].currentPower -= 10;
+        }
+        rocket1CurrentPower = rocket1.thrusters[0].currentPower + rocket1.thrusters[1].currentPower + rocket1.thrusters[2].currentPower;
+        console.log(rocket1CurrentPower);
+    } else {
+        alert("Primero debes crear el 'Rocket1'");
+    }
+}
+
+function breakRocket2() {
+    if (rocket2Exists) {
+        if (rocket2.thrusters[0].currentPower > 0) {
+            rocket2.thrusters[0].currentPower -= 10;
+        }
+        if (rocket2.thrusters[1].currentPower > 0) {
+            rocket2.thrusters[1].currentPower -= 10;
+        }
+        if (rocket2.thrusters[2].currentPower > 0) {
+            rocket2.thrusters[2].currentPower -= 10;
+        }
+        if (rocket2.thrusters[3].currentPower > 0) {
+            rocket2.thrusters[3].currentPower -= 10;
+        }
+        if (rocket2.thrusters[4].currentPower > 0) {
+            rocket2.thrusters[4].currentPower -= 10;
+        }
+        if (rocket2.thrusters[5].currentPower > 0) {
+            rocket2.thrusters[5].currentPower -= 10;
+        }
+        rocket2CurrentPower = rocket2.thrusters[0].currentPower + rocket2.thrusters[1].currentPower + rocket2.thrusters[2].currentPower + rocket2.thrusters[3].currentPower + rocket2.thrusters[4].currentPower + rocket2.thrusters[5].currentPower;
+        console.log(rocket2CurrentPower);
+    } else {
+        alert("Primero debes crear el 'Rocket2'");
+    }
+}
+
+// Print Rocket --------------------------------------
+function printRocket1() {
+    if (rocket1Exists) {
+        displayRockets.innerHTML += "Rocket 1: " + rocket1.code + " thrusters max power: " + rocket1.thrusters[0].maxPower + ", " + rocket1.thrusters[1].maxPower + ", " + rocket1.thrusters[2].maxPower + "." + "</br>";
+        displayRockets.innerHTML += "Rocket 1 current power: " + rocket1CurrentPower + "</br>";
+
+    } else {
+        alert("Primero debes crear el 'Rocket1'");
+    }
+}
+
+function printRocket2() {
+    if (rocket2Exists) {
+        displayRockets.innerHTML += "Rocket 2: " + rocket2.code + " thrusters max power: " + rocket2.thrusters[0].maxPower + ", " + rocket2.thrusters[1].maxPower + ", " + rocket2.thrusters[2].maxPower + ", " + rocket2.thrusters[3].maxPower + ", " + rocket2.thrusters[4].maxPower + ", " + rocket2.thrusters[5].maxPower + "." + "</br>";
+        displayRockets.innerHTML += "Rocket 2 current power: " + rocket2CurrentPower + "</br>";
+
+    } else {
+        alert("Primero debes crear el 'Rocket2'");
+    }
+}
+
+function printAllRockets() {
+    if (rocket1Exists && rocket2Exists) {
+        displayRockets.innerHTML += "Rocket 1: " + rocket1.code + " thrusters max power: " + rocket1.thrusters[0].maxPower + ", " + rocket1.thrusters[1].maxPower + ", " + rocket1.thrusters[2].maxPower + "." + "</br>";
+        displayRockets.innerHTML += "Rocket 1 current power: " + rocket1CurrentPower + "</br>";
+
+        displayRockets.innerHTML += "Rocket 2: " + rocket2.code + " thrusters max power: " + rocket2.thrusters[0].maxPower + ", " + rocket2.thrusters[1].maxPower + ", " + rocket2.thrusters[2].maxPower + ", " + rocket2.thrusters[3].maxPower + ", " + rocket2.thrusters[4].maxPower + ", " + rocket2.thrusters[5].maxPower + "." + "</br>";
+        displayRockets.innerHTML += "Rocket 2 current power: " + rocket2CurrentPower + "</br>";
+    } else {
+        alert("Primero debes crear los dos 'Rockets'");
+    }
+}
