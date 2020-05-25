@@ -49,5 +49,7 @@ input:hover {
     border-radius: 10px;
 }
 
-
+#both-btn {
+    padding: 10px 70px 10px 70px;
+}
 
