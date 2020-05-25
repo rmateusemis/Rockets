@@ -12,20 +12,22 @@
     <input type="submit" value="Create Rocket 2" id="createRocket2Id" onclick="createRocket2()">
     </p>
     <p>
-    <input type="submit" value="Accelerate Rocket 1" id="accelerateRocket1Id">
-    <input type="submit" value="Accelerate Rocket 2" id="accelerateRocket2Id">
-    <input type="submit" value="Break Rocket 1" id="breakRocket1Id">
-    <input type="submit" value="Break Rocket 2" id="breakRocket2Id">
+    <input type="submit" value="Accelerate Rocket 1" id="accelerateRocket1Id" onclick="accelerateRocket1()">
+    <input type="submit" value="Accelerate Rocket 2" id="accelerateRocket2Id" onclick="accelerateRocket2()">
+    <input type="submit" value="Break Rocket 1" id="breakRocket1Id" onclick="breakRocket1()">
+    <input type="submit" value="Break Rocket 2" id="breakRocket2Id" onclick="breakRocket2()">
     </p>
     <p>
-    <input type="submit" value="Print Rocket 1" id="printRocket1Id">
-    <input type="submit" value="Print Rocket 2" id="printRocket2Id">
-    <input type="submit" value="Print ALL Rockets" id="printAllRocketsId">
+    <input type="submit" value="Print Rocket 1" id="printRocket1Id" onclick="printRocket1()">
+    <input type="submit" value="Print Rocket 2" id="printRocket2Id" onclick="printRocket2()">
+    <input type="submit" value="Print ALL Rockets" id="printAllRocketsId" onclick="printAllRockets()">
     </p>
 
+    <p id="displayRockets"></p>
+
     <!--JS Scripts-->
-    <script src="../controllers/controller.ts"></script>
-    <script src="../models/rocket.ts"></script>
-    <script src="../models/thruster.ts"></script>
+    <script src="../controllers/controller.js"></script>
+    <script src="../models/rocket.js"></script>
+    <script src="../models/thruster.js"></script>
 </body>
 </html>
