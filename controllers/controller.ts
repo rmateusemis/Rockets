@@ -47,17 +47,13 @@ function createRocket2() {
     rocket2Exists = true;
 }
 
-// Accelerate Rocket ----------------------------------------
+// Accelerate Rockets ----------------------------------------
 function accelerateRocket1() {
     if (rocket1Exists) {
-        if (rocket1.thrusters[0].currentPower < rocket1.thrusters[0].maxPower) {
-            rocket1.thrusters[0].currentPower += 10;
-        }
-        if (rocket1.thrusters[1].currentPower < rocket1.thrusters[1].maxPower) {
-            rocket1.thrusters[1].currentPower += 10;
-        }
-        if (rocket1.thrusters[2].currentPower < rocket1.thrusters[2].maxPower) {
-            rocket1.thrusters[2].currentPower += 10;
+        for (let i = 0; i < rocket1.thrusters.length; i++) {
+            if (rocket1.thrusters[i].currentPower < rocket1.thrusters[i].maxPower) {
+                rocket1.thrusters[i].currentPower += 10;
+            }
         }
         rocket1CurrentPower = rocket1.thrusters[0].currentPower + rocket1.thrusters[1].currentPower + rocket1.thrusters[2].currentPower;
         console.log(rocket1CurrentPower);
@@ -68,23 +64,10 @@ function accelerateRocket1() {
 
 function accelerateRocket2() {
     if (rocket2Exists) {
-        if (rocket2.thrusters[0].currentPower < rocket2.thrusters[0].maxPower) {
-            rocket2.thrusters[0].currentPower += 10;
-        }
-        if (rocket2.thrusters[1].currentPower < rocket2.thrusters[1].maxPower) {
-            rocket2.thrusters[1].currentPower += 10;
-        }
-        if (rocket2.thrusters[2].currentPower < rocket2.thrusters[2].maxPower) {
-            rocket2.thrusters[2].currentPower += 10;
-        }
-        if (rocket2.thrusters[3].currentPower < rocket2.thrusters[3].maxPower) {
-            rocket2.thrusters[3].currentPower += 10;
-        }
-        if (rocket2.thrusters[4].currentPower < rocket2.thrusters[4].maxPower) {
-            rocket2.thrusters[4].currentPower += 10;
-        }
-        if (rocket2.thrusters[5].currentPower < rocket2.thrusters[5].maxPower) {
-            rocket2.thrusters[5].currentPower += 10;
+        for (let i = 0; i < rocket2.thrusters.length; i++) {
+            if (rocket2.thrusters[i].currentPower < rocket2.thrusters[i].maxPower) {
+                rocket2.thrusters[i].currentPower += 10;
+            }
         }
         rocket2CurrentPower = rocket2.thrusters[0].currentPower + rocket2.thrusters[1].currentPower + rocket2.thrusters[2].currentPower + rocket2.thrusters[3].currentPower + rocket2.thrusters[4].currentPower + rocket2.thrusters[5].currentPower;
         console.log(rocket2CurrentPower);
@@ -93,17 +76,13 @@ function accelerateRocket2() {
     }
 }
 
-// Break Rocket ----------------------------------------
+// Break Rockets ----------------------------------------
 function breakRocket1() {
     if (rocket1Exists) {
-        if (rocket1.thrusters[0].currentPower > 0) {
-            rocket1.thrusters[0].currentPower -= 10;
-        }
-        if (rocket1.thrusters[1].currentPower > 0) {
-            rocket1.thrusters[1].currentPower -= 10;
-        }
-        if (rocket1.thrusters[2].currentPower > 0) {
-            rocket1.thrusters[2].currentPower -= 10;
+        for (let i = 0; i < rocket1.thrusters.length; i++) {
+            if (rocket1.thrusters[i].currentPower > 0) {
+                rocket1.thrusters[i].currentPower -= 10;
+            }
         }
         rocket1CurrentPower = rocket1.thrusters[0].currentPower + rocket1.thrusters[1].currentPower + rocket1.thrusters[2].currentPower;
         console.log(rocket1CurrentPower);
@@ -114,23 +93,10 @@ function breakRocket1() {
 
 function breakRocket2() {
     if (rocket2Exists) {
-        if (rocket2.thrusters[0].currentPower > 0) {
-            rocket2.thrusters[0].currentPower -= 10;
-        }
-        if (rocket2.thrusters[1].currentPower > 0) {
-            rocket2.thrusters[1].currentPower -= 10;
-        }
-        if (rocket2.thrusters[2].currentPower > 0) {
-            rocket2.thrusters[2].currentPower -= 10;
-        }
-        if (rocket2.thrusters[3].currentPower > 0) {
-            rocket2.thrusters[3].currentPower -= 10;
-        }
-        if (rocket2.thrusters[4].currentPower > 0) {
-            rocket2.thrusters[4].currentPower -= 10;
-        }
-        if (rocket2.thrusters[5].currentPower > 0) {
-            rocket2.thrusters[5].currentPower -= 10;
+        for (let i = 0; i < rocket2.thrusters.length; i++) {
+            if (rocket2.thrusters[i].currentPower > 0) {
+                rocket2.thrusters[i].currentPower -= 10;
+            }
         }
         rocket2CurrentPower = rocket2.thrusters[0].currentPower + rocket2.thrusters[1].currentPower + rocket2.thrusters[2].currentPower + rocket2.thrusters[3].currentPower + rocket2.thrusters[4].currentPower + rocket2.thrusters[5].currentPower;
         console.log(rocket2CurrentPower);
@@ -139,7 +105,7 @@ function breakRocket2() {
     }
 }
 
-// Print Rocket --------------------------------------
+// Print Rockets --------------------------------------
 function printRocket1() {
     if (rocket1Exists) {
         displayRockets.innerHTML = `ROCKET1: ${rocket1.code}</br> Thrusters max power: ${rocket1.thrusters[0].maxPower}, ${rocket1.thrusters[1].maxPower}, ${rocket1.thrusters[2].maxPower}.</br>Current power: ${rocket1CurrentPower}</br>`;
