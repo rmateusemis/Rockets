@@ -143,7 +143,6 @@ function printRocket1() {
     if (rocket1Exists) {
         displayRockets.innerHTML += "Rocket 1: " + rocket1.code + " thrusters max power: " + rocket1.thrusters[0].maxPower + ", " + rocket1.thrusters[1].maxPower + ", " + rocket1.thrusters[2].maxPower + "." + "</br>";
         displayRockets.innerHTML += "Rocket 1 current power: " + rocket1CurrentPower + "</br>";
-
     } else {
         alert("Primero debes crear el 'Rocket1'");
     }
@@ -153,7 +152,6 @@ function printRocket2() {
     if (rocket2Exists) {
         displayRockets.innerHTML += "Rocket 2: " + rocket2.code + " thrusters max power: " + rocket2.thrusters[0].maxPower + ", " + rocket2.thrusters[1].maxPower + ", " + rocket2.thrusters[2].maxPower + ", " + rocket2.thrusters[3].maxPower + ", " + rocket2.thrusters[4].maxPower + ", " + rocket2.thrusters[5].maxPower + "." + "</br>";
         displayRockets.innerHTML += "Rocket 2 current power: " + rocket2CurrentPower + "</br>";
-
     } else {
         alert("Primero debes crear el 'Rocket2'");
     }
