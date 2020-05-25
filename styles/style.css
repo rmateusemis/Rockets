@@ -1,0 +1,53 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rocketsDiv {
+    align-items: center;
+    text-align: center;
+}
+
+.rocketBox {
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    padding: 0px 30px 20px 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0px 5px 10px 5px;
+}
+
+img {
+    width: 70px;
+    align-items: center;
+    text-align: center;
+    display: block;
+    margin-left: 130px;
+    margin-bottom: 3px;
+}
+
+input {
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    border: hidden;
+    background-color: rgb(235, 16, 16);
+    color: white;
+    font-weight: bold;
+    box-shadow: 3px 3px rgba(158, 157, 157, 0.589) ;
+}
+
+input:hover {
+    background-color: rgb(179, 2, 2);
+}
+
+#displayRockets {
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+

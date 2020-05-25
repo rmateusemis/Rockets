@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rockets</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
+
 <body>
     <h1>ROCKETS</h1>
     <!--Buttons-->
-    <p>
-    <input type="submit" value="Create Rocket 1" id="createRocket1Id" onclick="createRocket1()">
-    <input type="submit" value="Create Rocket 2" id="createRocket2Id" onclick="createRocket2()">
-    </p>
-    <p>
-    <input type="submit" value="Accelerate Rocket 1" id="accelerateRocket1Id" onclick="accelerateRocket1()">
-    <input type="submit" value="Accelerate Rocket 2" id="accelerateRocket2Id" onclick="accelerateRocket2()">
-    <input type="submit" value="Break Rocket 1" id="breakRocket1Id" onclick="breakRocket1()">
-    <input type="submit" value="Break Rocket 2" id="breakRocket2Id" onclick="breakRocket2()">
-    </p>
-    <p>
-    <input type="submit" value="Print Rocket 1" id="printRocket1Id" onclick="printRocket1()">
-    <input type="submit" value="Print Rocket 2" id="printRocket2Id" onclick="printRocket2()">
-    <input type="submit" value="Print ALL Rockets" id="printAllRocketsId" onclick="printAllRockets()">
-    </p>
+    <div class="rocketsDiv">
+        <div class="rocketBox">
+            <H4>ROCKET1</H4>
+            <img src="../img/rocket-icon.png" alt="Rocket 1">
+            <input type="submit" value="CREATE" class="rocket-btn" onclick="createRocket1()">
+            <input type="submit" value="ACCELERATE" class="rocket-btn" onclick="accelerateRocket1()">
+            <input type="submit" value="BREAK" class="rocket-btn" onclick="breakRocket1()">
+            <input type="submit" value="PRINT" class="rocket-btn" onclick="printRocket1()">
+        </div>
 
-    <p id="displayRockets"></p>
+        <div class="rocketBox">
+            <H4>ROCKET2</H4>
+            <img src="../img/rocket-icon.png" alt="Rocket 1">
+            <input type="submit" value="CREATE" class="rocket-btn" onclick="createRocket2()">
+            <input type="submit" value="ACCELERATE" class="rocket-btn" onclick="accelerateRocket2()">
+            <input type="submit" value="BREAK" class="rocket-btn" onclick="breakRocket2()">
+            <input type="submit" value="PRINT" class="rocket-btn" onclick="printRocket2()">
+        </div>
+    </div>
+    <input type="submit" value="PRINT BOTH" class="rocket-btn" id="both-btn" onclick="printAllRockets()">
+    <div id="resultBox">
+        <h3 id="displayRockets"></h3>
+    </div>
 
     <!--JS Scripts-->
     <script src="../controllers/controller.js"></script>
     <script src="../models/rocket.js"></script>
     <script src="../models/thruster.js"></script>
 </body>
+
 </html>

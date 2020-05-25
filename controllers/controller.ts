@@ -8,6 +8,7 @@ let rocket1Exists = false;
 let rocket2Exists = false;
 
 var displayRockets = document.getElementById('displayRockets');
+displayRockets?.style.display = 'none';
 
 // Create rocket ---------------------------------------------
 function createRocket1() {
@@ -141,8 +142,8 @@ function breakRocket2() {
 // Print Rocket --------------------------------------
 function printRocket1() {
     if (rocket1Exists) {
-        displayRockets.innerHTML += "Rocket 1: " + rocket1.code + " thrusters max power: " + rocket1.thrusters[0].maxPower + ", " + rocket1.thrusters[1].maxPower + ", " + rocket1.thrusters[2].maxPower + "." + "</br>";
-        displayRockets.innerHTML += "Rocket 1 current power: " + rocket1CurrentPower + "</br>";
+        displayRockets.innerHTML = `ROCKET1: ${rocket1.code}</br> Thrusters max power: ${rocket1.thrusters[0].maxPower}, ${rocket1.thrusters[1].maxPower}, ${rocket1.thrusters[2].maxPower}.</br>Current power: ${rocket1CurrentPower}</br>`;
+        displayRockets.style.display = 'inline-block';
     } else {
         alert("Primero debes crear el 'Rocket1'");
     }
@@ -150,8 +151,8 @@ function printRocket1() {
 
 function printRocket2() {
     if (rocket2Exists) {
-        displayRockets.innerHTML += "Rocket 2: " + rocket2.code + " thrusters max power: " + rocket2.thrusters[0].maxPower + ", " + rocket2.thrusters[1].maxPower + ", " + rocket2.thrusters[2].maxPower + ", " + rocket2.thrusters[3].maxPower + ", " + rocket2.thrusters[4].maxPower + ", " + rocket2.thrusters[5].maxPower + "." + "</br>";
-        displayRockets.innerHTML += "Rocket 2 current power: " + rocket2CurrentPower + "</br>";
+        displayRockets.innerHTML = `ROCKET2: ${rocket2.code}<br> Thrusters max power: ${rocket2.thrusters[0].maxPower}, ${rocket2.thrusters[1].maxPower}, ${rocket2.thrusters[2].maxPower}, ${rocket2.thrusters[3].maxPower}, ${rocket2.thrusters[4].maxPower}, ${rocket2.thrusters[5].maxPower}.</br>Current power: ${rocket2CurrentPower}</br>`;
+        displayRockets.style.display = 'inline-block';
     } else {
         alert("Primero debes crear el 'Rocket2'");
     }
@@ -159,11 +160,8 @@ function printRocket2() {
 
 function printAllRockets() {
     if (rocket1Exists && rocket2Exists) {
-        displayRockets.innerHTML += "Rocket 1: " + rocket1.code + " thrusters max power: " + rocket1.thrusters[0].maxPower + ", " + rocket1.thrusters[1].maxPower + ", " + rocket1.thrusters[2].maxPower + "." + "</br>";
-        displayRockets.innerHTML += "Rocket 1 current power: " + rocket1CurrentPower + "</br>";
-
-        displayRockets.innerHTML += "Rocket 2: " + rocket2.code + " thrusters max power: " + rocket2.thrusters[0].maxPower + ", " + rocket2.thrusters[1].maxPower + ", " + rocket2.thrusters[2].maxPower + ", " + rocket2.thrusters[3].maxPower + ", " + rocket2.thrusters[4].maxPower + ", " + rocket2.thrusters[5].maxPower + "." + "</br>";
-        displayRockets.innerHTML += "Rocket 2 current power: " + rocket2CurrentPower + "</br>";
+        displayRockets.innerHTML = `ROCKET1: ${rocket1.code}<br>Thrusters max power: ${rocket1.thrusters[0].maxPower}, ${rocket1.thrusters[1].maxPower}, ${rocket1.thrusters[2].maxPower}.</br>Current power: ${rocket1CurrentPower}</br></br>ROCKET2: ${rocket2.code}<br>Thrusters max power: ${rocket2.thrusters[0].maxPower}, ${rocket2.thrusters[1].maxPower}, ${rocket2.thrusters[2].maxPower}, ${rocket2.thrusters[3].maxPower}, ${rocket2.thrusters[4].maxPower}, ${rocket2.thrusters[5].maxPower}.</br>Current power: ${rocket2CurrentPower}</br>`;
+        displayRockets.style.display = 'inline-block';
     } else {
         alert("Primero debes crear los dos 'Rockets'");
     }
