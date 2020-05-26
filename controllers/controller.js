@@ -9,32 +9,42 @@ var displayRockets = document.getElementById('displayRockets');
 displayRockets === null || displayRockets === void 0 ? void 0 : displayRockets.style.display = 'none';
 // Create rocket ---------------------------------------------
 function createRocket1() {
-    rocket1 = new Rocket('32WESSDS', 3);
-    var thruster1 = new Thruster(10, 0);
-    var thruster2 = new Thruster(30, 0);
-    var thruster3 = new Thruster(80, 0);
-    rocket1.addThruster(thruster1);
-    rocket1.addThruster(thruster2);
-    rocket1.addThruster(thruster3);
-    console.log(rocket1);
-    rocket1Exists = true;
+    if (rocket1Exists) {
+        alert("'Rocket1' ya ha sido creado anteriormente");
+    }
+    else {
+        rocket1 = new Rocket('32WESSDS', 3);
+        var thruster1 = new Thruster(10, 0);
+        var thruster2 = new Thruster(30, 0);
+        var thruster3 = new Thruster(80, 0);
+        rocket1.addThruster(thruster1);
+        rocket1.addThruster(thruster2);
+        rocket1.addThruster(thruster3);
+        console.log(rocket1);
+        rocket1Exists = true;
+    }
 }
 function createRocket2() {
-    rocket2 = new Rocket('LDSFJA32', 6);
-    var thruster1 = new Thruster(30, 0);
-    var thruster2 = new Thruster(40, 0);
-    var thruster3 = new Thruster(50, 0);
-    var thruster4 = new Thruster(50, 0);
-    var thruster5 = new Thruster(30, 0);
-    var thruster6 = new Thruster(10, 0);
-    rocket2.addThruster(thruster1);
-    rocket2.addThruster(thruster2);
-    rocket2.addThruster(thruster3);
-    rocket2.addThruster(thruster4);
-    rocket2.addThruster(thruster5);
-    rocket2.addThruster(thruster6);
-    console.log(rocket2);
-    rocket2Exists = true;
+    if (rocket2Exists) {
+        alert("'Rocket2' ya ha sido creado anteriormente");
+    }
+    else {
+        rocket2 = new Rocket('LDSFJA32', 6);
+        var thruster1 = new Thruster(30, 0);
+        var thruster2 = new Thruster(40, 0);
+        var thruster3 = new Thruster(50, 0);
+        var thruster4 = new Thruster(50, 0);
+        var thruster5 = new Thruster(30, 0);
+        var thruster6 = new Thruster(10, 0);
+        rocket2.addThruster(thruster1);
+        rocket2.addThruster(thruster2);
+        rocket2.addThruster(thruster3);
+        rocket2.addThruster(thruster4);
+        rocket2.addThruster(thruster5);
+        rocket2.addThruster(thruster6);
+        console.log(rocket2);
+        rocket2Exists = true;
+    }
 }
 // Accelerate Rockets ----------------------------------------
 function accelerateRocket1() {
